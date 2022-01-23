@@ -1,13 +1,11 @@
 import random, sys
 
-corpus = open('/usr/share/dict/words', 'r')
-dictionary = corpus.readlines()
-corpus.close()
-
-words = []
-
-if __name__ == '__main__':
-  number = int(sys.argv[1]) or random.randint(len(dictionary)-1)
+def print_random_words(text_file, num_words):
+  corpus = open(text_file, 'r')
+  dictionary = corpus.readlines()
+  corpus.close()
+  words = []
+  number = num_words
   
   for x in range(number):
     index = random.randint(0, len(dictionary)-1)
@@ -15,3 +13,8 @@ if __name__ == '__main__':
     words.append(word)
 
   print(*words, ' ')
+
+
+
+if __name__ == '__main__':
+  print_random_words('/usr/share/dict/words', int(sys.argv[1]) or random.randint(20))

@@ -1,12 +1,14 @@
 corpus = 'one fish. two fish, red Fish blue fish'
-
+# make a list of lists for a speed tradeoff scenario
 def histogram(source_text):
+  histogram = []
+
   source_text = source_text.lower()
   words = source_text.split()
-  histogram = []
+  
   
   for index in range(len(words)):
-    words[index] = words[index].strip('.,?!()-')
+    words[index] = words[index].strip('\n.,?!()-')
 
   for word in words:
     if (word, words.count(word)) in histogram:
@@ -16,7 +18,7 @@ def histogram(source_text):
   return histogram
     
 def unique_words(histogram):
-  return(len(histogram))
+  return len(histogram)
 
 def frequency(word, histogram):
   for histogram_word in histogram:

@@ -1,21 +1,20 @@
 from string import punctuation
 
-
 corpus = None
 with open('text.txt', 'r') as c:
   corpus = c.read()
 
 def histogram(source_text):
   histogram = []
-  words = source_text.translate(str.maketrans('', '', punctuation)).lower().split()
+  words = sorted(source_text.translate(str.maketrans('', '', punctuation)).lower().split())
   total_number_of_words = len(words)
-  
-  for word in words:
-    if (word, words.count(word)) in histogram:
-      pass
+  for word in range(total_number_of_words-1):
+    index = -1
+    if words[word-1] == words[word]:
+      histogram[index][1]+=1
     else:
-      histogram.append((word, words.count(word)))
-
+      histogram.append([words[word], 1])
+      index+=1
   return (histogram, total_number_of_words)
     
 def unique_words(histogram):

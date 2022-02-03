@@ -1,6 +1,5 @@
 from string import punctuation
 
-corpus = None
 with open('text.txt', 'r') as c:
   corpus = c.read()
 

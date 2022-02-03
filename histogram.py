@@ -7,7 +7,7 @@ def histogram(source_text):
   histogram = []
   words = sorted(source_text.translate(str.maketrans('', '', punctuation)).lower().split())
   total_number_of_words = len(words)
-  for word in range(total_number_of_words-1):
+  for word in range(total_number_of_words):
     index = -1
     if words[word-1] == words[word]:
       histogram[index][1]+=1

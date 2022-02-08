@@ -19,7 +19,7 @@ class Listogram(list):
             word_list = sorted(word_list)
             for word in range(len(word_list)):
                 index = -1
-                if word_list[word-1] == word_list[word]:
+                if word_list[word-1] == word_list[word] and word > 0:
                     self[index][1]+=1
                     self.tokens += 1
                 else:

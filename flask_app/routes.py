@@ -1,11 +1,11 @@
 from flask import Flask, Blueprint, render_template
-from sample import sample_word
-from histogram import histogram
+from text_to_list import text_to_list
+from listogram import Listogram
 main = Blueprint('main', __name__)
+
+histogram = Listogram(text_to_list('text.txt'))
 
 @main.route('/')
 def home_page():
-  with open('text.txt', 'r') as c:
-    corpus = c.read()
-  hist_and_count = histogram(corpus)
-  return render_template('base.html', word=sample_word(hist_and_count[0],hist_and_count[1]))
+  word = histogram.sample()
+  return render_template('base.html', word=word)

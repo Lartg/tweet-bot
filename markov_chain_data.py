@@ -6,7 +6,8 @@ corpus = ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish', 'two', 'f
 
 listogram = Listogram(corpus) 
 
-def markov_chain_data(listogram):
+def markov_chain_data(listogram, corpus_as_list):
+  corpus = corpus_as_list
   dictionary_of_histograms = {}
   for word in listogram:
     key = word[0]

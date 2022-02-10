@@ -1,4 +1,3 @@
-from email.errors import MissingHeaderBodySeparatorDefect
 import json, sys
 from text_to_list import text_to_list
 from listogram import Listogram
@@ -26,12 +25,12 @@ def update_master_dict(dictionary):
 
 
 if __name__ == '__main__':
-  # text_file = sys.argv[1]
-  # word_list = text_to_list(text_file)
-  # listogram = Listogram(word_list)
-  listogram = Listogram(corpus)
-  master_dict_data = markov_chain_data(listogram)
-  print(markov_chain_data(listogram))
+  text_file = sys.argv[1]
+  word_list = text_to_list(text_file)
+  listogram = Listogram(word_list)
+  #listogram = Listogram(corpus)
+  master_dict_data = markov_chain_data(listogram, word_list)
+  
   update_master_dict(master_dict_data)
 
 

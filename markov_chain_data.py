@@ -21,4 +21,3 @@ def markov_chain_data(listogram, corpus_as_list):
       corpus_index += 1
     dictionary_of_histograms[key] = word_list
   return dictionary_of_histograms
-  

@@ -1,9 +1,3 @@
-from listogram import Listogram
-from text_to_list import text_to_list
-import random
-# corpus = ['one', 'fish', 'two', 'fish', 'red', 'fish', 'blue', 'fish', 'two', 'fish']
-# corpus = text_to_list('text.txt')
-
 def markov_chain_data_nth(corpus_as_list, order):
   corpus = corpus_as_list
   dictionary_of_histograms = {}

@@ -1,5 +1,4 @@
 import re
-import sys
 
 def clean_text(text_file):
   with open(text_file, 'r') as text:
@@ -12,6 +11,5 @@ def clean_text(text_file):
   return corpus
 
 if __name__ == '__main__':
-  #text_file = sys.argv[1]
   text_file = 'test_text.txt'
-  clean_text(text_file)
+  print(clean_text(text_file))

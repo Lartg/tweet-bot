@@ -1,7 +1,7 @@
 import json
 import random
 
-char_limit = random.randint(50,100)
+char_limit = random.randint(100,225)
 tweet = ''
 
 with open('master_dict.json', 'r') as master_dict:
@@ -31,5 +31,5 @@ while len(tweet) <= char_limit:
   tweet += f' {new_word}'
   
 
-print(tweet)
+print(f'{tweet}.')
 

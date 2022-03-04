@@ -2,7 +2,7 @@ import json, sys
 from text_to_list import text_to_list
 from listogram import Listogram
 from markov_chain_data import markov_chain_data_nth
-
+from text_cleanup import clean_text
 def update_master_dict(dictionary):
   with open('master_dict.json', 'r') as master_dict:
     data = json.load(master_dict)
@@ -26,10 +26,7 @@ def update_master_dict(dictionary):
 
 if __name__ == '__main__':
   text_file = sys.argv[1]
-  word_list = text_to_list(text_file)
-  print('step1')
-  # listogram = Listogram(word_list)
-  # master_dict_data = markov_chain_data(listogram, word_list)
-  master_dict_data = markov_chain_data_nth(word_list, 2)
-  print('step2')
+  text = clean_text(text_file)
+  word_list = text_to_list(text)
+  master_dict_data = markov_chain_data_nth(word_list, 3)
   update_master_dict(master_dict_data)
